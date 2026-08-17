@@ -27,7 +27,7 @@ body {
 }
 
 body {
-  background: #111;
+  background: #FEE4D2;
   color: var(--text-dark);
 }
 
@@ -39,7 +39,7 @@ body {
   overflow: hidden;
   max-width: 520px;
   margin: 0 auto;
-  background: #000;
+  background: #FEE4D2;
 }
 
 /* ---------- 화면 전환 ---------- */
