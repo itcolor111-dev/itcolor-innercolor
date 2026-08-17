@@ -7,9 +7,18 @@ const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbybD_iP
 
 const screens = {
   opening: document.getElementById("screen-opening"),
-  start: document.getElementById("screen-start"),
-  survey: document.getElementById("screen-survey"),
-  result: document.getElementById("screen-result")
+
+  profile:
+    document.getElementById("screen-profile"),
+
+  start:
+    document.getElementById("screen-start"),
+
+  survey:
+    document.getElementById("screen-survey"),
+
+  result:
+    document.getElementById("screen-result")
 };
 
 let state = {
@@ -29,6 +38,13 @@ let state = {
   resultKey: null,
 
   slideIndex: 0,
+
+  profile: {
+    language: currentLang,
+    gender: "",
+    ageGroup: "",
+    occupation: ""
+  },
 
   // 구글시트 저장용
   submissionId: null,
@@ -104,7 +120,11 @@ let startChatTimers = [];
 
 // -------------------- 화면 전환 --------------------
 function showScreen(name) {
-  Object.values(screens).forEach(s => s.classList.remove("active"));
+
+  Object.values(screens).forEach(screen => {
+    screen.classList.remove("active");
+  });
+
   screens[name].classList.add("active");
 
   if (name === "start") {
@@ -116,8 +136,221 @@ function showScreen(name) {
 
 screens.opening.addEventListener("click", () => {
   stopOpeningCycle();
-  showScreen("start");
+
+  showScreen("profile");
 });
+
+
+// ============================================================
+// 기본정보 선택
+// ============================================================
+
+const profileLangButtons =
+  document.querySelectorAll(
+    ".profile-lang-btn"
+  );
+
+const profileGenderButtons =
+  document.querySelectorAll(
+    ".profile-gender-btn"
+  );
+
+const profileAge =
+  document.getElementById(
+    "profileAge"
+  );
+
+const profileJob =
+  document.getElementById(
+    "profileJob"
+  );
+
+const btnProfileNext =
+  document.getElementById(
+    "btnProfileNext"
+  );
+
+const profileWarning =
+  document.getElementById(
+    "profileWarning"
+  );
+
+
+// ------------------------------------------------------------
+// 언어
+// ------------------------------------------------------------
+
+profileLangButtons.forEach(button => {
+
+  button.addEventListener(
+    "click",
+    () => {
+
+      const lang =
+        button.dataset.profileLang;
+
+      state.profile.language =
+        lang;
+
+      profileLangButtons
+        .forEach(item => {
+
+          item.classList.toggle(
+            "selected",
+            item === button
+          );
+
+        });
+
+
+      // 사이트 전체 언어도 변경
+      applyI18n(lang);
+
+      updateProfileNextButton();
+
+    }
+  );
+
+});
+
+
+// 현재 언어 기본 선택
+profileLangButtons.forEach(button => {
+
+  button.classList.toggle(
+    "selected",
+    button.dataset.profileLang === currentLang
+  );
+
+});
+
+
+// ------------------------------------------------------------
+// 성별
+// ------------------------------------------------------------
+
+profileGenderButtons.forEach(button => {
+
+  button.addEventListener(
+    "click",
+    () => {
+
+      state.profile.gender =
+        button.dataset.value;
+
+      profileGenderButtons
+        .forEach(item => {
+
+          item.classList.toggle(
+            "selected",
+            item === button
+          );
+
+        });
+
+      updateProfileNextButton();
+
+    }
+  );
+
+});
+
+
+// ------------------------------------------------------------
+// 연령대
+// ------------------------------------------------------------
+
+profileAge.addEventListener(
+  "change",
+  () => {
+
+    state.profile.ageGroup =
+      profileAge.value;
+
+    updateProfileNextButton();
+
+  }
+);
+
+
+// ------------------------------------------------------------
+// 직업
+// ------------------------------------------------------------
+
+profileJob.addEventListener(
+  "change",
+  () => {
+
+    state.profile.occupation =
+      profileJob.value;
+
+    updateProfileNextButton();
+
+  }
+);
+
+
+// ------------------------------------------------------------
+// 선택 완료 여부
+// ------------------------------------------------------------
+
+function isProfileComplete() {
+
+  return Boolean(
+    state.profile.language &&
+    state.profile.gender &&
+    state.profile.ageGroup &&
+    state.profile.occupation
+  );
+
+}
+
+
+// ------------------------------------------------------------
+// 다음 버튼 상태
+// ------------------------------------------------------------
+
+function updateProfileNextButton() {
+
+  const completed =
+    isProfileComplete();
+
+  btnProfileNext.classList.toggle(
+    "enabled",
+    completed
+  );
+
+}
+
+
+// ------------------------------------------------------------
+// 다음
+// ------------------------------------------------------------
+
+btnProfileNext.addEventListener(
+  "click",
+  () => {
+
+    if (!isProfileComplete()) {
+
+      profileWarning.classList.add(
+        "show"
+      );
+
+      return;
+
+    }
+
+
+    profileWarning.classList.remove(
+      "show"
+    );
+
+    showScreen("start");
+
+  }
+);
+
 
 // -------------------- 시작페이지 대화 애니메이션 --------------------
 
@@ -1984,12 +2217,12 @@ function submitToGoogleSheet() {
   const resultName =
     resultCharacter
       ? (
-          resultCharacter.name[currentLang]
-          ||
-          resultCharacter.name.ko
-          ||
-          state.resultKey
-        )
+        resultCharacter.name[currentLang]
+        ||
+        resultCharacter.name.ko
+        ||
+        state.resultKey
+      )
       : state.resultKey;
 
 
@@ -2007,6 +2240,16 @@ function submitToGoogleSheet() {
 
     lang:
       currentLang,
+
+
+    gender:
+      state.profile.gender,
+
+    ageGroup:
+      state.profile.ageGroup,
+
+    occupation:
+      state.profile.occupation,
 
     resultKey:
       state.resultKey,
@@ -2090,25 +2333,25 @@ function submitToGoogleSheet() {
     }
   )
 
-  .then(() => {
+    .then(() => {
 
-    console.log(
-      "[구글시트] 응답 전송 완료"
-    );
+      console.log(
+        "[구글시트] 응답 전송 완료"
+      );
 
-  })
+    })
 
-  .catch(error => {
+    .catch(error => {
 
-    console.error(
-      "[구글시트] 응답 전송 실패",
-      error
-    );
+      console.error(
+        "[구글시트] 응답 전송 실패",
+        error
+      );
 
-    // 실제 네트워크 실패 시
-    // 재전송 가능하도록 풀어줌
-    state.hasSubmitted = false;
+      // 실제 네트워크 실패 시
+      // 재전송 가능하도록 풀어줌
+      state.hasSubmitted = false;
 
-  });
+    });
 
 }

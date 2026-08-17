@@ -5,20 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>컬러 성향 테스트</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260816-1">
 </head>
 
 <body>
 
   <div id="app">
 
-    <!-- 언어 선택 -->
-    <div class="lang-switch" id="langSwitch">
-      <button class="lang-btn active" data-lang="ko">KO</button>
-      <button class="lang-btn" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="ja">JA</button>
-      <button class="lang-btn" data-lang="zh">ZH</button>
-    </div>
 
     <!-- 1. 오프닝 페이지 -->
     <section class="screen active" id="screen-opening" data-bg="brand">
@@ -47,6 +40,179 @@
       </div>
     </section>
 
+    <!-- 2. 기본정보 선택 페이지 -->
+    <section class="screen" id="screen-profile">
+
+      <div class="profile-card">
+
+        <div class="profile-brand">
+          INNER COLOR
+        </div>
+
+        <h2 class="profile-title" data-i18n="profile.title">
+          테스트 전, 간단히 알려주세요
+        </h2>
+
+        <p class="profile-desc" data-i18n="profile.desc">
+          더 의미 있는 컬러 데이터를 위해 사용됩니다.
+        </p>
+
+
+        <!-- 언어 -->
+        <div class="profile-field">
+
+          <label class="profile-label" data-i18n="profile.language">
+            언어
+          </label>
+
+          <div class="profile-language-grid">
+
+            <button type="button" class="profile-lang-btn" data-profile-lang="ko">
+              한국어
+            </button>
+
+            <button type="button" class="profile-lang-btn" data-profile-lang="en">
+              English
+            </button>
+
+            <button type="button" class="profile-lang-btn" data-profile-lang="ja">
+              日本語
+            </button>
+
+            <button type="button" class="profile-lang-btn" data-profile-lang="zh">
+              中文
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- 성별 -->
+        <div class="profile-field">
+
+          <label class="profile-label" data-i18n="profile.gender">
+            성별
+          </label>
+
+          <div class="profile-gender-grid">
+
+            <button type="button" class="profile-gender-btn" data-value="female" data-i18n="profile.genderFemale">
+              여성
+            </button>
+
+            <button type="button" class="profile-gender-btn" data-value="male" data-i18n="profile.genderMale">
+              남성
+            </button>
+
+            <button type="button" class="profile-gender-btn" data-value="other" data-i18n="profile.genderOther">
+              기타
+            </button>
+
+            <button type="button" class="profile-gender-btn" data-value="prefer_not" data-i18n="profile.genderSkip">
+              응답하지 않음
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- 연령대 -->
+        <div class="profile-field">
+
+          <label class="profile-label" for="profileAge" data-i18n="profile.age">
+            연령대
+          </label>
+
+          <select class="profile-select" id="profileAge">
+
+            <option value="" data-i18n="profile.select">
+              선택해주세요
+            </option>
+
+            <option value="teens" data-i18n="profile.ageTeens">
+              10대 이하
+            </option>
+
+            <option value="20s" data-i18n="profile.age20">20대</option>
+            <option value="30s" data-i18n="profile.age30">30대</option>
+            <option value="40s" data-i18n="profile.age40">40대</option>
+            <option value="50s" data-i18n="profile.age50">50대</option>
+
+            <option value="60plus" data-i18n="profile.age60">
+              60대 이상
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- 직업 -->
+        <div class="profile-field">
+
+          <label class="profile-label" for="profileJob" data-i18n="profile.job">
+            직업
+          </label>
+
+          <select class="profile-select" id="profileJob">
+
+            <option value="" data-i18n="profile.select">
+              선택해주세요
+            </option>
+
+            <option value="student" data-i18n="profile.jobStudent">
+              학생
+            </option>
+
+            <option value="employee" data-i18n="profile.jobEmployee">
+              직장인
+            </option>
+
+            <option value="business" data-i18n="profile.jobBusiness">
+              자영업·사업
+            </option>
+
+            <option value="freelancer" data-i18n="profile.jobFreelancer">
+              프리랜서
+            </option>
+
+            <option value="homemaker" data-i18n="profile.jobHomemaker">
+              주부
+            </option>
+
+            <option value="jobseeker" data-i18n="profile.jobSeeker">
+              취업준비·구직중
+            </option>
+
+            <option value="other" data-i18n="profile.jobOther">
+              기타
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <p class="profile-warning" id="profileWarning" data-i18n="profile.warning">
+          모든 항목을 선택해주세요.
+        </p>
+
+
+        <button type="button" class="profile-next-btn" id="btnProfileNext" data-i18n="profile.next">
+          다음
+        </button>
+
+      </div>
+
+
+      <footer class="copyright" data-i18n="copyright">
+        ⓒ 2026 ITCOLOR. All rights reserved.
+      </footer>
+
+    </section>
+
     <!-- 2. 시작 페이지 -->
     <section class="screen" id="screen-start" data-bg="brand">
       <div class="start-chat-wrap">
@@ -59,7 +225,7 @@
             <div class="start-profile-name">Nobody</div>
           </div>
 
-          <h2 class="start-page-title">InnerColor</h2>
+          <h2 class="start-page-title">INNER COLOR</h2>
         </div>
 
         <div class="start-chat-area" id="startChatArea">
@@ -82,7 +248,7 @@
       <div class="survey-shell">
 
         <header class="survey-header">
-          <h2 class="survey-title">InnerColor</h2>
+          <h2 class="survey-title">INNER COLOR</h2>
           <span class="q-count" id="qCount">1 / 24</span>
         </header>
 
@@ -384,7 +550,7 @@
         <!-- 슬라이드 2: 부적 이미지 -->
         <div class="result-slide" id="slideTalisman">
           <div class="talisman-inner">
-            <h3 class="talisman-title" data-i18n="talisman.title">나만의 부적</h3>
+            <h3 class="talisman-title" data-i18n="talisman.title">나만의 배경화면</h3>
             <div class="talisman-frame">
               <img src="assets/characters/default.png" alt="talisman" class="talisman-img" id="talismanImg">
             </div>
@@ -488,9 +654,9 @@
 
   <canvas id="saveCanvas" style="display:none;"></canvas>
 
-  <script src="js/i18n.js?v=20260809-3"></script>
-  <script src="js/questions.js?v=20260809-3"></script>
-  <script src="js/main.js?v=20260809-3"></script>
+  <script src="js/i18n.js?v=20260816-1"></script>
+  <script src="js/questions.js?v=20260816-1"></script>
+  <script src="js/main.js?v=20260816-1"></script>
 </body>
 
 </html>
