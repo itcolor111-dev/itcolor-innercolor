@@ -1,6 +1,6 @@
 // ==============================================================
 // 컬러 성향 테스트
-// 9컬러 × 8문항 = 총 72문항
+// 9컬러 × 5문항 = 총 45문항
 // KO / EN / JA / ZH 지원
 // 예/아니오 응답 + 역채점 방식
 // ==============================================================
@@ -974,7 +974,7 @@ const QUESTION_BANK = [
     color: "mari",
     reverse: false,
     text: {
-      ko: "어려운 상황에서도 내가 앞장서서 해결책을 찾으려 한다."
+      ko: "앞에 나서는 일에 주저하지 않는다."
     }
   },
   {
@@ -990,7 +990,7 @@ const QUESTION_BANK = [
     color: "mari",
     reverse: false,
     text: {
-      ko: "다른 사람들이 망설이고 있을 때 먼저 의견을 내는 편이다."
+      ko: "내 생각이 분명할 때는 반대가 있어도 솔직하게 표현한다."
     }
   },
   {
@@ -998,33 +998,10 @@ const QUESTION_BANK = [
     color: "mari",
     reverse: false,
     text: {
-      ko: "일이 예상대로 진행되지 않으면 순간적으로 감정이 올라올 때가 있다."
-    }
-  },
-  {
-    id: "red-06",
-    color: "mari",
-    reverse: false,
-    text: {
-      ko: "내 생각이 분명할 때는 반대가 있어도 솔직하게 표현한다."
-    }
-  },
-  {
-    id: "red-07",
-    color: "mari",
-    reverse: false,
-    text: {
       ko: "시작할 때의 열정에 비해 마무리 단계에서 집중력이 부족한 편이다."
     }
   },
-  {
-    id: "red-08",
-    color: "mari",
-    reverse: true,
-    text: {
-      ko: "확실히 성공할 수 있다는 보장이 없으면 새로운 일은 시작하지 않는다."
-    }
-  },
+
 
   // ============================================================
   // ORANGE · 라라까리
@@ -1059,41 +1036,18 @@ const QUESTION_BANK = [
     color: "lala",
     reverse: false,
     text: {
-      ko: "스트레스를 받을 때 혼자 있기보다 누군가와 이야기하고 싶어진다."
-    }
-  },
-  {
-    id: "orange-05",
-    color: "lala",
-    reverse: false,
-    text: {
       ko: "주변 분위기가 어색하면 내가 먼저 분위기를 풀려고 한다."
     }
   },
   {
-    id: "orange-06",
-    color: "lala",
-    reverse: false,
-    text: {
-      ko: "먼 미래보다는 지금의 즐거움을 먼저 선택할 때가 있다."
-    }
-  },
-  {
-    id: "orange-07",
-    color: "lala",
-    reverse: false,
-    text: {
-      ko: "정리정돈에 능숙하다."
-    }
-  },
-  {
-    id: "orange-08",
+    id: "orange-05",
     color: "lala",
     reverse: true,
     text: {
       ko: "모임에서는 필요한 말만 하고 눈에 띄지 않는 편이 편하다."
     }
   },
+
 
   // ============================================================
   // YELLOW · 모해까리
@@ -1136,240 +1090,10 @@ const QUESTION_BANK = [
     color: "mohae",
     reverse: false,
     text: {
-      ko: "관심 있는 주제가 생기면 이것저것 찾아보며 알아가는 편이다."
-    }
-  },
-  {
-    id: "yellow-06",
-    color: "mohae",
-    reverse: false,
-    text: {
       ko: "반복적이고 변화가 없는 일은 쉽게 지루하게 느껴진다."
     }
   },
-  {
-    id: "yellow-07",
-    color: "mohae",
-    reverse: false,
-    text: {
-      ko: "기분이나 흥미에 따라 집중력이 달라질 때가 있다."
-    }
-  },
-  {
-    id: "yellow-08",
-    color: "mohae",
-    reverse: true,
-    text: {
-      ko: "검증되지 않은 아이디어는 생각해 볼 가치가 별로 없다고 느낀다."
-    }
-  },
 
-  // ============================================================
-  // GREEN · 모이까리
-  // ============================================================
-
-  {
-    id: "green-01",
-    color: "moi",
-    reverse: false,
-    text: {
-      ko: "의견이 부딪힐 때 내 주장을 밀기보다 서로 받아들일 수 있는 중간점을 찾으려 한다."
-    }
-  },
-  {
-    id: "green-02",
-    color: "moi",
-    reverse: false,
-    text: {
-      ko: "나는 화려한 일상보다는 소소한 일상이 좋다."
-    }
-  },
-  {
-    id: "green-03",
-    color: "moi",
-    reverse: false,
-    text: {
-      ko: "주변 사람의 표정이나 분위기 변화를 비교적 빨리 알아차린다."
-    }
-  },
-  {
-    id: "green-04",
-    color: "moi",
-    reverse: false,
-    text: {
-      ko: "의견이 다른 사람의 말도 충분히 듣고 이해하려고 한다."
-    }
-  },
-  {
-    id: "green-05",
-    color: "moi",
-    reverse: false,
-    text: {
-      ko: "불편하거나 답답한 상황에서도 쉽게 감정을 드러내기보다 참고 기다리는 편이다."
-    }
-  },
-  {
-    id: "green-06",
-    color: "moi",
-    reverse: false,
-    text: {
-      ko: "한번 신뢰한 사람과는 오랫동안 관계를 유지하는 편이다."
-    }
-  },
-  {
-    id: "green-07",
-    color: "moi",
-    reverse: false,
-    text: {
-      ko: "급하게 결론을 내리기보다 충분히 생각하고 기다리는 편이다."
-    }
-  },
-  {
-    id: "green-08",
-    color: "moi",
-    reverse: true,
-    text: {
-      ko: "관계가 불편해지더라도 내 입장만 분명하게 전달하면 된다고 생각한다."
-    }
-  },
-
-  // ============================================================
-  // BLUE · 두루까리
-  // ============================================================
-
-  {
-    id: "blue-01",
-    color: "duru",
-    reverse: false,
-    text: {
-      ko: "맡은 일은 약속한 기한과 기준에 맞춰 끝내려고 한다."
-    }
-  },
-  {
-    id: "blue-02",
-    color: "duru",
-    reverse: false,
-    text: {
-      ko: "시작한 일이 마무리되지 않으면 계속 마음에 남는다."
-    }
-  },
-  {
-    id: "blue-03",
-    color: "duru",
-    reverse: false,
-    text: {
-      ko: "중요한 일을 시작하기 전에 순서와 계획을 세우는 편이다."
-    }
-  },
-  {
-    id: "blue-04",
-    color: "duru",
-    reverse: false,
-    text: {
-      ko: "감정적으로 흔들리는 상황에서도 사실과 근거를 확인하려 한다."
-    }
-  },
-  {
-    id: "blue-05",
-    color: "duru",
-    reverse: false,
-    text: {
-      ko: "주변 사람들은 나를 믿고 맡길 수 있는 사람이라고 생각하는 편이다."
-    }
-  },
-  {
-    id: "blue-06",
-    color: "duru",
-    reverse: false,
-    text: {
-      ko: "규칙이나 약속은 특별한 이유가 없다면 지켜야 한다고 생각한다."
-    }
-  },
-  {
-    id: "blue-07",
-    color: "duru",
-    reverse: false,
-    text: {
-      ko: "책임을 맡으면 필요 이상으로 혼자 감당하려 할 때가 있다."
-    }
-  },
-  {
-    id: "blue-08",
-    color: "duru",
-    reverse: true,
-    text: {
-      ko: "계획이 틀어지면 그 일 자체를 포기하고 싶어진다."
-    }
-  },
-
-  // ============================================================
-  // PURPLE · 티나까리
-  // ============================================================
-
-  {
-    id: "purple-01",
-    color: "tina",
-    reverse: false,
-    text: {
-      ko: "남들이 쉽게 지나치는 분위기나 미묘한 차이를 잘 느끼는 편이다."
-    }
-  },
-  {
-    id: "purple-02",
-    color: "tina",
-    reverse: false,
-    text: {
-      ko: "다른 사람과 비슷하기보다 나만의 방식과 개성을 갖고 싶다."
-    }
-  },
-  {
-    id: "purple-03",
-    color: "tina",
-    reverse: false,
-    text: {
-      ko: "음악, 미술, 영화 등 예술적 경험이 내 감정에 큰 영향을 준다."
-    }
-  },
-  {
-    id: "purple-04",
-    color: "tina",
-    reverse: false,
-    text: {
-      ko: "논리적으로 설명하기 어렵더라도 직감이 맞을 때가 많다고 느낀다."
-    }
-  },
-  {
-    id: "purple-05",
-    color: "tina",
-    reverse: false,
-    text: {
-      ko: "현실적인 성과뿐 아니라 의미와 가치가 중요하다고 생각한다."
-    }
-  },
-  {
-    id: "purple-06",
-    color: "tina",
-    reverse: false,
-    text: {
-      ko: "혼자 생각하거나 상상하는 혼자만의 시간이 필요하다."
-    }
-  },
-  {
-    id: "purple-07",
-    color: "tina",
-    reverse: false,
-    text: {
-      ko: "감정이나 분위기에 민감해 쉽게 지치거나 예민해질 때가 있다."
-    }
-  },
-  {
-    id: "purple-08",
-    color: "tina",
-    reverse: true,
-    text: {
-      ko: "실용적인 결과가 없다면 상상이나 감성은 별로 중요하지 않다."
-    }
-  },
 
   // ============================================================
   // PINK · 주나까리
@@ -1380,7 +1104,7 @@ const QUESTION_BANK = [
     color: "juna",
     reverse: false,
     text: {
-      ko: "나는 나의 현재 모습이 가장 좋다."
+      ko: "가까운 사람이 힘들어하면 내 일처럼 마음이 쓰인다."
     }
   },
   {
@@ -1388,7 +1112,7 @@ const QUESTION_BANK = [
     color: "juna",
     reverse: false,
     text: {
-      ko: "가까운 사람이 힘들어하면 내 일처럼 마음이 쓰인다."
+      ko: "좋아하는 사람에게 애정과 관심을 자주 표현하는 편이다."
     }
   },
   {
@@ -1396,7 +1120,7 @@ const QUESTION_BANK = [
     color: "juna",
     reverse: false,
     text: {
-      ko: "상대방이 기뻐하는 모습을 보면 나도 큰 행복을 느낀다."
+      ko: "좋아하는 사람에게 필요한 것이 보이면 부탁받지 않아도 먼저 챙겨주는 편이다."
     }
   },
   {
@@ -1404,35 +1128,11 @@ const QUESTION_BANK = [
     color: "juna",
     reverse: false,
     text: {
-      ko: "좋아하는 사람에게 애정과 관심을 자주 표현하는 편이다."
+      ko: "아기자기한 물건이나 부드러운 음악, 따뜻한 분위기에 마음이 끌리는 편이다."
     }
   },
   {
     id: "pink-05",
-    color: "juna",
-    reverse: false,
-    text: {
-      ko: "좋아하는 사람에게 필요한 것이 보이면 부탁받지 않아도 먼저 챙겨주는 편이다."
-    }
-  },
-  {
-    id: "pink-06",
-    color: "juna",
-    reverse: false,
-    text: {
-      ko: "다른 사람을 돌보느라 정작 나 자신을 돌보는 일은 뒤로 미룰 때가 있다."
-    }
-  },
-  {
-    id: "pink-07",
-    color: "juna",
-    reverse: false,
-    text: {
-      ko: "가까운 사람이 속상해하면 해결책을 찾기보다 먼저 위로하고 마음을 달래주는 편이다."
-    }
-  },
-  {
-    id: "pink-08",
     color: "juna",
     reverse: true,
     text: {
@@ -1440,8 +1140,147 @@ const QUESTION_BANK = [
     }
   },
 
+
   // ============================================================
-  // BROWN · 보다까리
+  // GREEN · 모이까리
+  // ============================================================
+
+  {
+    id: "green-01",
+    color: "moi",
+    reverse: false,
+    text: {
+      ko: "의견이 부딪칠 때 내 주장을 밀기보다 서로 받아들일 수 있는 중간 점을 찾으려 한다."
+    }
+  },
+  {
+    id: "green-02",
+    color: "moi",
+    reverse: false,
+    text: {
+      ko: "관계가 불편해질까 봐 싫은 소리를 하거나 거절하는 것을 어려워하는 편이다."
+    }
+  },
+  {
+    id: "green-03",
+    color: "moi",
+    reverse: false,
+    text: {
+      ko: "의견이 다른 사람의 말도 충분히 듣고 이해하려고 한다."
+    }
+  },
+  {
+    id: "green-04",
+    color: "moi",
+    reverse: false,
+    text: {
+      ko: "불편하거나 답답한 상황에서도 쉽게 감정을 드러내기보다 참고 기다리는 편이다."
+    }
+  },
+  {
+    id: "green-05",
+    color: "moi",
+    reverse: false,
+    text: {
+      ko: "한번 신뢰한 사람과는 오랫동안 관계를 유지하는 편이다."
+    }
+  },
+
+
+  // ============================================================
+  // BLUE · 두루까리
+  // ============================================================
+
+  {
+    id: "blue-01",
+    color: "duru",
+    reverse: false,
+    text: {
+      ko: "시작한 일이 마무리되지 않으면 계속 마음에 남는다."
+    }
+  },
+  {
+    id: "blue-02",
+    color: "duru",
+    reverse: false,
+    text: {
+      ko: "중요한 일을 시작하기 전에 순서와 계획을 세우는 편이다."
+    }
+  },
+  {
+    id: "blue-03",
+    color: "duru",
+    reverse: false,
+    text: {
+      ko: "감정적으로 흔들리는 상황에서도 사실과 근거를 확인하려 한다."
+    }
+  },
+  {
+    id: "blue-04",
+    color: "duru",
+    reverse: false,
+    text: {
+      ko: "주변 사람들은 나를 믿고 맡길 수 있는 사람이라고 생각하는 편이다."
+    }
+  },
+  {
+    id: "blue-05",
+    color: "duru",
+    reverse: true,
+    text: {
+      ko: "계획이 틀어지면 그 일 자체를 포기하고 싶어진다."
+    }
+  },
+
+
+  // ============================================================
+  // PURPLE · 티나까리
+  // ============================================================
+
+  {
+    id: "purple-01",
+    color: "tina",
+    reverse: false,
+    text: {
+      ko: "다른 사람과 비슷하기보다 나만의 방식과 개성을 갖고 싶다."
+    }
+  },
+  {
+    id: "purple-02",
+    color: "tina",
+    reverse: false,
+    text: {
+      ko: "음악, 미술, 영화 등 예술적 경험이 내 감정에 큰 영향을 준다."
+    }
+  },
+  {
+    id: "purple-03",
+    color: "tina",
+    reverse: false,
+    text: {
+      ko: "논리적으로 설명하기 어렵더라도 직감이 맞을 때가 많다고 느낀다."
+    }
+  },
+  {
+    id: "purple-04",
+    color: "tina",
+    reverse: false,
+    text: {
+      ko: "혼자 생각하거나 상상하는 혼자만의 시간이 필요하다."
+    }
+  },
+  {
+    id: "purple-05",
+    color: "tina",
+    reverse: false,
+    text: {
+      ko: "감정 기복이 남들에 비해 자주 있는 편이다."
+    }
+  },
+
+
+  // ============================================================
+  // BROWN · 보나까리
   // ============================================================
 
   {
@@ -1457,7 +1296,7 @@ const QUESTION_BANK = [
     color: "bona",
     reverse: false,
     text: {
-      ko: "주변 사람이 어려움을 겪으면 현실적으로 도움을 주려고 하며, 책임져야 할 일이 생기면 쉽게 피하지 않는 편이다."
+      ko: "책임져야 할 일이 생기면 쉽게 피하지 않는 편이다."
     }
   },
   {
@@ -1465,7 +1304,7 @@ const QUESTION_BANK = [
     color: "bona",
     reverse: false,
     text: {
-      ko: "나는 앞에서 이끄는 것보다 옆에서 돕는 조력자 역할이 좋다."
+      ko: "새롭고 화려한 것보다 익숙하고 실용적인 것을 오래 사용하는 편이 좋다."
     }
   },
   {
@@ -1473,41 +1312,18 @@ const QUESTION_BANK = [
     color: "bona",
     reverse: false,
     text: {
-      ko: "새롭고 화려한 것보다 익숙하고 실용적인 것을 오래 사용하는 편이 좋다."
-    }
-  },
-  {
-    id: "brown-05",
-    color: "bona",
-    reverse: false,
-    text: {
       ko: "눈에 띄는 성과보다 꾸준히 쌓아가는 과정이 중요하다고 생각한다."
     }
   },
   {
-    id: "brown-06",
-    color: "bona",
-    reverse: false,
-    text: {
-      ko: "선택할 때 유행보다 오래 사용할 수 있는지를 중요하게 본다."
-    }
-  },
-  {
-    id: "brown-07",
-    color: "bona",
-    reverse: false,
-    text: {
-      ko: "익숙한 공간이나 생활 방식에서 안정감을 느낀다."
-    }
-  },
-  {
-    id: "brown-08",
+    id: "brown-05",
     color: "bona",
     reverse: true,
     text: {
       ko: "오래 유지하는 것보다 계속 새로운 것으로 바꾸는 것이 좋다."
     }
   },
+
 
   // ============================================================
   // MODERN · 수리까리
@@ -1534,7 +1350,7 @@ const QUESTION_BANK = [
     color: "suri",
     reverse: false,
     text: {
-      ko: "감정보다 논리적으로 판단하려고 노력하는 편이다."
+      ko: "여러 가능성을 열어두기보다 분명한 결론을 내리는 것이 좋다."
     }
   },
   {
@@ -1542,7 +1358,7 @@ const QUESTION_BANK = [
     color: "suri",
     reverse: false,
     text: {
-      ko: "물건이나 공간이 깔끔하게 정리되어 있으면 집중이 잘된다."
+      ko: "다른 사람에게 빈틈없이 보이기 위해 스스로를 엄격하게 관리할 때가 있다."
     }
   },
   {
@@ -1550,33 +1366,10 @@ const QUESTION_BANK = [
     color: "suri",
     reverse: false,
     text: {
-      ko: "여러 가능성을 열어두기보다 분명한 결론을 내리는 것이 좋다."
-    }
-  },
-  {
-    id: "modern-06",
-    color: "suri",
-    reverse: false,
-    text: {
-      ko: "다른 사람에게 빈틈없이 보이기 위해 스스로를 엄격하게 관리할 때가 있다."
-    }
-  },
-  {
-    id: "modern-07",
-    color: "suri",
-    reverse: false,
-    text: {
       ko: "결과가 내 기준에 미치지 못하면 이미 잘한 부분도 만족하기 어렵다."
     }
-  },
-  {
-    id: "modern-08",
-    color: "suri",
-    reverse: true,
-    text: {
-      ko: "계획이나 기준 없이 상황에 따라 즉흥적으로 처리하는 것이 편하다."
-    }
   }
+
 ];
 
 // ==============================================================
@@ -1586,481 +1379,257 @@ const QUESTION_BANK = [
 
 const QUESTION_TRANSLATIONS = {
 
-  // ============================================================
   // RED
-  // ============================================================
-
   "red-01": {
-    en: "When something new comes up, I tend to jump in without hesitation.",
-    ja: "新しいことが始まると、ためらわずに行動に移すほうだ。",
-    zh: "遇到新的事情时，我往往会毫不犹豫地开始行动。"
+    en: "When something new comes up, I tend to start without hesitation.",
+    ja: "新しいことが始まると、ためらわずに取りかかるほうだ。",
+    zh: "遇到新的事情时，我往往会毫不犹豫地开始。"
   },
-
   "red-02": {
-    en: "Even in difficult situations, I tend to step forward and look for a solution.",
-    ja: "難しい状況でも、自分が前に出て解決策を探そうとする。",
-    zh: "即使遇到困难的情况，我也会主动站出来寻找解决办法。"
+    en: "I do not hesitate to step forward and take the lead.",
+    ja: "人前に出ることをためらわない。",
+    zh: "需要站出来时，我不会犹豫。"
   },
-
   "red-03": {
-    en: "Once I have a goal, I keep pushing forward even when there is competition or obstacles.",
+    en: "Once a goal is set, I keep pushing forward even when there is competition or obstacles.",
     ja: "目標が決まると、競争や障害があっても前に進み続ける。",
     zh: "一旦确定目标，即使有竞争或障碍，我也会坚持推进。"
   },
-
   "red-04": {
-    en: "When others hesitate, I tend to be the first to speak up.",
-    ja: "周りの人が迷っているとき、自分から先に意見を言うほうだ。",
-    zh: "当别人犹豫时，我通常会先表达自己的意见。"
-  },
-
-  "red-05": {
-    en: "When things do not go as expected, my emotions can flare up quickly.",
-    ja: "物事が思い通りに進まないと、瞬間的に感情が高ぶることがある。",
-    zh: "事情没有按预期发展时，我有时会一下子情绪上来。"
-  },
-
-  "red-06": {
     en: "When I am clear about what I think, I express it honestly even if others disagree.",
     ja: "自分の考えがはっきりしているときは、反対されても率直に伝える。",
     zh: "当我的想法很明确时，即使有人反对，我也会坦率表达。"
   },
-
-  "red-07": {
-    en: "Compared with the enthusiasm I have at the beginning, I sometimes lose focus near the end.",
-    ja: "始めたときの情熱に比べて、仕上げの段階では集中力が落ちることがある。",
-    zh: "相比开始时的热情，我在收尾阶段有时会缺乏专注力。"
-  },
-
-  "red-08": {
-    en: "If success is not guaranteed, I tend not to start something new.",
-    ja: "成功できる確信がなければ、新しいことは始めないほうだ。",
-    zh: "如果不能确定一定会成功，我往往不会开始新的事情。"
+  "red-05": {
+    en: "Compared with my enthusiasm at the beginning, I tend to lose focus during the finishing stage.",
+    ja: "始めたときの情熱に比べて、仕上げの段階では集中力が落ちるほうだ。",
+    zh: "相比开始时的热情，我在收尾阶段比较容易失去专注力。"
   },
 
 
-  // ============================================================
   // ORANGE
-  // ============================================================
-
   "orange-01": {
     en: "I can start a conversation fairly easily even with someone I have just met.",
     ja: "初対面の人とも比較的気軽に会話を始められる。",
-    zh: "即使是第一次见面的人，我也比较容易主动开始交谈。"
+    zh: "即使是第一次见面的人，我也比较容易开始交谈。"
   },
-
   "orange-02": {
     en: "I gain more energy from being with people than from being alone.",
     ja: "一人でいるときより、人と一緒にいるときのほうが元気になる。",
     zh: "比起独处，和大家在一起时我更有活力。"
   },
-
   "orange-03": {
     en: "I enjoy a life filled with fun experiences and new stimulation.",
     ja: "楽しい経験や新しい刺激のある生活が好きだ。",
     zh: "我喜欢充满有趣体验和新鲜刺激的生活。"
   },
-
   "orange-04": {
-    en: "When I am stressed, I would rather talk to someone than be alone.",
-    ja: "ストレスを感じたときは、一人でいるより誰かと話したくなる。",
-    zh: "有压力时，比起一个人待着，我更想找人聊一聊。"
-  },
-
-  "orange-05": {
     en: "When the atmosphere feels awkward, I tend to be the one who lightens the mood.",
     ja: "場の空気が気まずいと、自分から雰囲気を和らげようとする。",
     zh: "当周围气氛尴尬时，我通常会主动缓和气氛。"
   },
-
-  "orange-06": {
-    en: "Sometimes I choose enjoyment in the present over plans for the distant future.",
-    ja: "遠い将来よりも、今の楽しさを優先することがある。",
-    zh: "有时候比起遥远的未来，我会更优先选择当下的快乐。"
-  },
-
-  "orange-07": {
-    en: "I am good at keeping things organized and tidy.",
-    ja: "整理整頓が得意だ。",
-    zh: "我擅长整理和收纳。"
-  },
-
-  "orange-08": {
+  "orange-05": {
     en: "In group settings, I feel more comfortable saying only what is necessary and not standing out.",
     ja: "集まりでは必要なことだけ話し、目立たないほうが気楽だ。",
     zh: "在聚会中，我更喜欢只说必要的话，不引人注意。"
   },
 
 
-  // ============================================================
   // YELLOW
-  // ============================================================
-
   "yellow-01": {
     en: "Praise is one of my strongest sources of motivation.",
     ja: "私にとって、褒められることは大きな原動力になる。",
     zh: "对我来说，赞美是非常重要的动力来源。"
   },
-
   "yellow-02": {
     en: "When I get a new idea, I want to share it with someone.",
     ja: "新しいアイデアが浮かぶと、誰かに話したくなる。",
-    zh: "有了新的想法时，我会想马上和别人分享。"
+    zh: "有了新的想法时，我会想和别人分享。"
   },
-
   "yellow-03": {
     en: "I enjoy trying new approaches more than sticking to familiar ones.",
     ja: "慣れた方法より、新しいやり方を試すほうが楽しい。",
     zh: "比起熟悉的方法，我更喜欢尝试新的方式。"
   },
-
   "yellow-04": {
     en: "Even in difficult or frustrating situations, I try to find positive possibilities.",
     ja: "難しい状況や行き詰まったときでも、前向きな可能性を探そうとする。",
     zh: "即使在困难或令人沮丧的情况下，我也会努力寻找积极的可能性。"
   },
-
   "yellow-05": {
-    en: "When something interests me, I like to explore and learn more about it.",
-    ja: "興味のあることができると、いろいろ調べて知ろうとする。",
-    zh: "遇到感兴趣的主题时，我会主动查找各种资料深入了解。"
-  },
-
-  "yellow-06": {
     en: "I get bored easily with repetitive work that has little change.",
     ja: "変化のない単調なことが続くと、飽きやすい。",
     zh: "对于重复且没有变化的事情，我很容易感到无聊。"
   },
 
-  "yellow-07": {
-    en: "My ability to concentrate sometimes changes depending on my mood or level of interest.",
-    ja: "気分や興味によって、集中力が変わることがある。",
-    zh: "我的专注力有时会随着心情或兴趣而变化。"
-  },
 
-  "yellow-08": {
-    en: "I tend to think that untested ideas are not really worth considering.",
-    ja: "まだ検証されていないアイデアは、あまり考える価値がないと思う。",
-    zh: "我觉得未经验证的想法没有太大的思考价值。"
-  },
-
-
-  // ============================================================
-  // GREEN
-  // ============================================================
-
-  "green-01": {
-    en: "When opinions clash, I try to find a middle ground that both sides can accept rather than insist on my own view.",
-    ja: "意見がぶつかったときは、自分の主張を押し通すより、お互いに受け入れられる妥協点を探そうとする。",
-    zh: "意见发生冲突时，比起坚持自己的主张，我会努力寻找双方都能接受的折中点。"
-  },
-
-  "green-02": {
-    en: "I prefer a simple, everyday life to a glamorous one.",
-    ja: "華やかな毎日より、ささやかで穏やかな日常が好きだ。",
-    zh: "比起华丽的生活，我更喜欢平凡而安稳的日常。"
-  },
-
-  "green-03": {
-    en: "I notice changes in people's expressions or the atmosphere around me fairly quickly.",
-    ja: "周りの人の表情や場の雰囲気の変化に比較的早く気づく。",
-    zh: "我能比较快地察觉周围人的表情或气氛变化。"
-  },
-
-  "green-04": {
-    en: "I try to listen to and understand people even when their opinions differ from mine.",
-    ja: "自分と意見が違う人の話も、十分に聞いて理解しようとする。",
-    zh: "即使对方的意见与我不同，我也会认真倾听并尝试理解。"
-  },
-
-  "green-05": {
-    en: "Even in uncomfortable or frustrating situations, I tend to hold back my emotions and wait patiently rather than show them right away.",
-    ja: "不快だったりもどかしい状況でも、すぐに感情を表すより、我慢して待つほうだ。",
-    zh: "即使处在不舒服或令人烦闷的情况下，比起马上表露情绪，我更倾向于忍耐并等待。"
-  },
-
-  "green-06": {
-    en: "Once I trust someone, I tend to maintain that relationship for a long time.",
-    ja: "一度信頼した人とは、長く関係を続けるほうだ。",
-    zh: "一旦信任一个人，我通常会长久地维持这段关系。"
-  },
-
-  "green-07": {
-    en: "Rather than rushing to a conclusion, I prefer to think things through and wait.",
-    ja: "急いで結論を出すより、十分に考えて待つほうだ。",
-    zh: "比起急着下结论，我更愿意充分思考并耐心等待。"
-  },
-
-  "green-08": {
-    en: "Even if it makes the relationship uncomfortable, I think it is enough to clearly state my own position.",
-    ja: "関係が気まずくなっても、自分の立場をはっきり伝えればそれでよいと思う。",
-    zh: "即使关系因此变得不舒服，我也认为只要明确表达自己的立场就可以了。"
-  },
-
-
-  // ============================================================
-  // BLUE
-  // ============================================================
-
-  "blue-01": {
-    en: "I try to finish what I am responsible for according to the agreed deadline and standards.",
-    ja: "任されたことは、決められた期限や基準に合わせて終わらせようとする。",
-    zh: "对于负责的事情，我会尽量按照约定的期限和标准完成。"
-  },
-
-  "blue-02": {
-    en: "If something I started is left unfinished, it continues to bother me.",
-    ja: "始めたことが終わっていないと、ずっと気になる。",
-    zh: "开始的事情如果没有完成，我会一直放在心上。"
-  },
-
-  "blue-03": {
-    en: "Before starting something important, I tend to plan the order and steps.",
-    ja: "大切なことを始める前に、順序や計画を立てるほうだ。",
-    zh: "开始重要的事情之前，我通常会先安排顺序和计划。"
-  },
-
-  "blue-04": {
-    en: "Even when emotions are running high, I try to check the facts and evidence.",
-    ja: "感情が揺れる状況でも、事実や根拠を確認しようとする。",
-    zh: "即使情绪受到影响，我也会努力确认事实和依据。"
-  },
-
-  "blue-05": {
-    en: "People around me tend to see me as someone they can trust with responsibilities.",
-    ja: "周りの人から、安心して任せられる人だと思われているほうだ。",
-    zh: "周围的人通常认为我是一个值得信赖、可以托付事情的人。"
-  },
-
-  "blue-06": {
-    en: "I believe rules and promises should be kept unless there is a special reason not to.",
-    ja: "特別な理由がなければ、ルールや約束は守るべきだと思う。",
-    zh: "我认为如果没有特殊原因，就应该遵守规则和约定。"
-  },
-
-  "blue-07": {
-    en: "When I take responsibility for something, I sometimes try to handle too much on my own.",
-    ja: "責任を任されると、必要以上に一人で抱え込むことがある。",
-    zh: "承担责任时，我有时会把过多的事情一个人扛下来。"
-  },
-
-  "blue-08": {
-    en: "When a plan goes off track, I sometimes feel like giving up on the whole thing.",
-    ja: "計画が崩れると、そのこと自体を諦めたくなる。",
-    zh: "当计划被打乱时，我有时会想干脆放弃整件事情。"
-  },
-
-
-  // ============================================================
-  // PURPLE
-  // ============================================================
-
-  "purple-01": {
-    en: "I tend to notice subtle differences or moods that others easily overlook.",
-    ja: "他の人が見過ごしやすい雰囲気や微妙な違いによく気づく。",
-    zh: "我常常能察觉别人容易忽略的细微差异或氛围。"
-  },
-
-  "purple-02": {
-    en: "Rather than being like everyone else, I want to have my own style and individuality.",
-    ja: "人と同じであるより、自分らしいやり方や個性を持ちたい。",
-    zh: "比起和别人一样，我更希望拥有自己的方式和个性。"
-  },
-
-  "purple-03": {
-    en: "Artistic experiences such as music, art, and films have a strong influence on my emotions.",
-    ja: "音楽、美術、映画などの芸術的な体験は、自分の感情に大きく影響する。",
-    zh: "音乐、美术、电影等艺术体验会对我的情绪产生很大影响。"
-  },
-
-  "purple-04": {
-    en: "Even when I cannot explain it logically, I often feel that my intuition is right.",
-    ja: "論理的に説明できなくても、直感が当たっていると感じることが多い。",
-    zh: "即使无法用逻辑解释，我也常常觉得自己的直觉是对的。"
-  },
-
-  "purple-05": {
-    en: "Meaning and personal values are as important to me as practical results.",
-    ja: "現実的な成果だけでなく、意味や価値も大切だと思う。",
-    zh: "对我来说，意义和价值与现实成果同样重要。"
-  },
-
-  "purple-06": {
-    en: "I need time alone to think, imagine, or reflect.",
-    ja: "一人で考えたり想像したりする、自分だけの時間が必要だ。",
-    zh: "我需要独处的时间来思考、想象或沉浸在自己的世界里。"
-  },
-
-  "purple-07": {
-    en: "I am sensitive to emotions and atmosphere, so I can become tired or overwhelmed easily.",
-    ja: "感情や雰囲気に敏感で、疲れたり神経質になったりしやすい。",
-    zh: "我对情绪和氛围比较敏感，因此有时很容易疲惫或变得敏感。"
-  },
-
-  "purple-08": {
-    en: "If there is no practical result, I do not think imagination or emotion is very important.",
-    ja: "実用的な結果につながらないなら、想像力や感性はあまり重要ではないと思う。",
-    zh: "如果没有实际成果，我觉得想象力或感性并不是很重要。"
-  },
-
-
-  // ============================================================
   // PINK
-  // ============================================================
-
   "pink-01": {
-    en: "I like who I am right now.",
-    ja: "今の自分が一番好きだ。",
-    zh: "我喜欢现在的自己。"
-  },
-
-  "pink-02": {
     en: "When someone close to me is having a hard time, I worry about them as if it were my own problem.",
     ja: "親しい人がつらそうにしていると、自分のことのように心配になる。",
     zh: "亲近的人遇到困难时，我会像自己的事情一样挂心。"
   },
-
-  "pink-03": {
-    en: "Seeing someone else happy makes me feel very happy too.",
-    ja: "相手が喜んでいる姿を見ると、自分もとても幸せな気持ちになる。",
-    zh: "看到对方开心，我也会感到非常幸福。"
-  },
-
-  "pink-04": {
+  "pink-02": {
     en: "I often express affection and interest toward people I care about.",
     ja: "好きな人には、愛情や関心をよく表現するほうだ。",
     zh: "对于喜欢和在乎的人，我经常表达爱意和关心。"
   },
-
-  "pink-05": {
+  "pink-03": {
     en: "When I notice that someone I care about needs something, I tend to take care of it before being asked.",
     ja: "大切な人に必要なものがあると気づいたら、頼まれなくても先に気づかってあげるほうだ。",
-    zh: "如果发现我在乎的人需要什么，即使对方没有开口，我也会主动为他/她准备好。"
+    zh: "如果发现我在乎的人需要什么，即使对方没有开口，我也会主动照顾。"
   },
-
-  "pink-06": {
-    en: "I sometimes put caring for others ahead of taking care of myself.",
-    ja: "人の世話を優先して、自分のことを後回しにすることがある。",
-    zh: "我有时会因为照顾别人，而把照顾自己放在后面。"
+  "pink-04": {
+    en: "I am drawn to cute little objects, soft music, and warm atmospheres.",
+    ja: "かわいらしい小物や柔らかな音楽、温かい雰囲気に心を惹かれるほうだ。",
+    zh: "我容易被精致可爱的物品、柔和的音乐和温暖的氛围吸引。"
   },
-
-  "pink-07": {
-    en: "When someone close to me is upset, I tend to comfort them first rather than immediately look for a solution.",
-    ja: "親しい人が落ち込んでいるときは、すぐに解決策を探すより、まず慰めて気持ちを落ち着かせようとする。",
-    zh: "亲近的人难过时，比起马上寻找解决办法，我通常会先安慰对方、让对方的心情平静下来。"
-  },
-
-  "pink-08": {
+  "pink-05": {
     en: "Even in close relationships, I tend to keep some emotional distance rather than express my feelings.",
     ja: "親しい関係でも、感情を表さず一定の距離を保つほうだ。",
     zh: "即使关系亲近，我也倾向于不表达感情，并保持一定距离。"
   },
 
 
-  // ============================================================
-  // BROWN
-  // ============================================================
+  // GREEN
+  "green-01": {
+    en: "When opinions clash, I try to find a middle ground that both sides can accept rather than insist on my own view.",
+    ja: "意見がぶつかったときは、自分の主張を押し通すより、お互いに受け入れられる妥協点を探そうとする。",
+    zh: "意见发生冲突时，比起坚持自己的主张，我会努力寻找双方都能接受的折中点。"
+  },
+  "green-02": {
+    en: "I find it difficult to say something unpleasant or refuse a request because I worry the relationship may become uncomfortable.",
+    ja: "関係が気まずくなるのが心配で、嫌なことを言ったり断ったりするのが苦手なほうだ。",
+    zh: "因为担心关系变得尴尬，我比较难说出让人不舒服的话或拒绝别人。"
+  },
+  "green-03": {
+    en: "I try to listen to and understand people even when their opinions differ from mine.",
+    ja: "自分と意見が違う人の話も、十分に聞いて理解しようとする。",
+    zh: "即使对方的意见与我不同，我也会认真倾听并尝试理解。"
+  },
+  "green-04": {
+    en: "Even in uncomfortable or frustrating situations, I tend to hold back my emotions and wait patiently.",
+    ja: "不快だったりもどかしい状況でも、すぐに感情を表すより我慢して待つほうだ。",
+    zh: "即使处在不舒服或令人烦闷的情况下，我也更倾向于忍耐并等待。"
+  },
+  "green-05": {
+    en: "Once I trust someone, I tend to maintain that relationship for a long time.",
+    ja: "一度信頼した人とは、長く関係を続けるほうだ。",
+    zh: "一旦信任一个人，我通常会长久地维持这段关系。"
+  },
 
+
+  // BLUE
+  "blue-01": {
+    en: "If something I started is left unfinished, it continues to bother me.",
+    ja: "始めたことが終わっていないと、ずっと気になる。",
+    zh: "开始的事情如果没有完成，我会一直放在心上。"
+  },
+  "blue-02": {
+    en: "Before starting something important, I tend to plan the order and steps.",
+    ja: "大切なことを始める前に、順序や計画を立てるほうだ。",
+    zh: "开始重要的事情之前，我通常会先安排顺序和计划。"
+  },
+  "blue-03": {
+    en: "Even when emotions are running high, I try to check the facts and evidence.",
+    ja: "感情が揺れる状況でも、事実や根拠を確認しようとする。",
+    zh: "即使情绪受到影响，我也会努力确认事实和依据。"
+  },
+  "blue-04": {
+    en: "People around me tend to see me as someone they can trust with responsibilities.",
+    ja: "周りの人から、安心して任せられる人だと思われているほうだ。",
+    zh: "周围的人通常认为我是一个值得信赖、可以托付事情的人。"
+  },
+  "blue-05": {
+    en: "When a plan goes off track, I sometimes feel like giving up on the whole thing.",
+    ja: "計画が崩れると、そのこと自体を諦めたくなる。",
+    zh: "当计划被打乱时，我有时会想干脆放弃整件事情。"
+  },
+
+
+  // PURPLE
+  "purple-01": {
+    en: "Rather than being like everyone else, I want to have my own style and individuality.",
+    ja: "人と同じであるより、自分らしいやり方や個性を持ちたい。",
+    zh: "比起和别人一样，我更希望拥有自己的方式和个性。"
+  },
+  "purple-02": {
+    en: "Artistic experiences such as music, art, and films have a strong influence on my emotions.",
+    ja: "音楽、美術、映画などの芸術的な体験は、自分の感情に大きく影響する。",
+    zh: "音乐、美术、电影等艺术体验会对我的情绪产生很大影响。"
+  },
+  "purple-03": {
+    en: "Even when I cannot explain it logically, I often feel that my intuition is right.",
+    ja: "論理的に説明できなくても、直感が当たっていると感じることが多い。",
+    zh: "即使无法用逻辑解释，我也常常觉得自己的直觉是对的。"
+  },
+  "purple-04": {
+    en: "I need time alone to think or imagine.",
+    ja: "一人で考えたり想像したりする、自分だけの時間が必要だ。",
+    zh: "我需要独处的时间来思考或想象。"
+  },
+  "purple-05": {
+    en: "I tend to experience emotional ups and downs more often than other people.",
+    ja: "他の人に比べて、感情の浮き沈みが多いほうだ。",
+    zh: "与其他人相比，我的情绪起伏比较频繁。"
+  },
+
+
+  // BROWN
   "brown-01": {
     en: "I need enough time before I can fully accept a new change.",
     ja: "新しい変化を受け入れるまでには、十分な時間が必要なほうだ。",
     zh: "在接受新的变化之前，我通常需要充分的时间。"
   },
-
   "brown-02": {
-    en: "When people around me are having difficulties or responsibilities arise, I try to help in practical ways rather than avoid them.",
-    ja: "周りの人が困っていたり、自分が責任を負う状況になったりすると、避けずに現実的な方法で助けようとする。",
-    zh: "当身边的人遇到困难，或出现需要我承担责任的情况时，我会尽量提供实际帮助，而不会轻易逃避。"
+    en: "When I have a responsibility to take on, I do not easily avoid it.",
+    ja: "責任を負うことになっても、簡単には避けないほうだ。",
+    zh: "遇到需要承担责任的事情时，我不会轻易逃避。"
   },
-
   "brown-03": {
-    en: "I prefer supporting others from the side rather than taking the lead.",
-    ja: "前に立って引っ張るより、そばで支える役割のほうが好きだ。",
-    zh: "比起站在前面带领大家，我更喜欢在旁边支持和协助。"
-  },
-
-  "brown-04": {
     en: "I prefer using familiar and practical things for a long time rather than choosing something new and flashy.",
     ja: "新しくて華やかなものより、使い慣れた実用的なものを長く使うほうが好きだ。",
     zh: "比起新颖华丽的东西，我更喜欢长久使用熟悉而实用的东西。"
   },
-
-  "brown-05": {
+  "brown-04": {
     en: "I value steadily building things over time more than achieving highly visible results.",
     ja: "目立つ成果より、着実に積み重ねていく過程を大切にする。",
     zh: "比起显眼的成果，我更重视长期稳定积累的过程。"
   },
-
-  "brown-06": {
-    en: "When choosing something, I care more about how long I can use it than whether it is trendy.",
-    ja: "何かを選ぶとき、流行よりも長く使えるかどうかを重視する。",
-    zh: "做选择时，比起是否流行，我更看重能否长久使用。"
-  },
-
-  "brown-07": {
-    en: "Familiar places and routines give me a sense of stability.",
-    ja: "慣れた場所や生活スタイルに安心感を覚える。",
-    zh: "熟悉的空间和生活方式会让我感到安心。"
-  },
-
-  "brown-08": {
+  "brown-05": {
     en: "I prefer constantly changing to something new rather than keeping things the same for a long time.",
     ja: "同じものを長く続けるより、常に新しいものに変えていくほうが好きだ。",
     zh: "比起长期维持同样的状态，我更喜欢不断换成新的事物。"
   },
 
 
-  // ============================================================
   // MODERN
-  // ============================================================
-
   "modern-01": {
     en: "I prefer things to be simple and organized rather than complicated.",
     ja: "複雑なものより、シンプルで整理されたやり方が好きだ。",
     zh: "比起复杂的方式，我更喜欢简单而有条理的方式。"
   },
-
   "modern-02": {
     en: "I feel more comfortable when standards and principles are clearly defined.",
     ja: "物事をするとき、基準や原則がはっきりしていると安心する。",
     zh: "做事情时，标准和原则越明确，我越觉得安心。"
   },
-
   "modern-03": {
-    en: "I try to make decisions based on logic rather than emotion.",
-    ja: "感情よりも論理を重視して判断しようとする。",
-    zh: "我会努力以逻辑而不是情绪来做判断。"
-  },
-
-  "modern-04": {
-    en: "I can concentrate better when my surroundings are clean and organized.",
-    ja: "物や空間がきれいに整っていると、集中しやすい。",
-    zh: "物品和空间整理得很整洁时，我会更容易集中注意力。"
-  },
-
-  "modern-05": {
     en: "I prefer reaching a clear conclusion rather than leaving many possibilities open.",
     ja: "いろいろな可能性を残しておくより、明確な結論を出すほうが好きだ。",
     zh: "比起保留很多可能性，我更喜欢得出明确的结论。"
   },
-
-  "modern-06": {
+  "modern-04": {
     en: "I sometimes manage myself strictly because I want to appear flawless to others.",
     ja: "人から隙のない人に見られたくて、自分を厳しく管理することがある。",
     zh: "为了让别人觉得我没有缺点，我有时会非常严格地要求自己。"
   },
-
-  "modern-07": {
+  "modern-05": {
     en: "If the result does not meet my standards, I find it hard to feel satisfied even with the parts I did well.",
     ja: "結果が自分の基準に届かないと、うまくできた部分があっても満足しにくい。",
     zh: "如果结果没有达到自己的标准，即使已经做得不错，我也很难感到满意。"
-  },
-
-  "modern-08": {
-    en: "I feel comfortable handling things spontaneously without a plan or clear standards.",
-    ja: "計画や基準を決めず、その場の流れで対応するほうが楽だ。",
-    zh: "没有计划或明确标准，视情况临时处理事情会让我觉得更轻松。"
   }
+
 };
 
 
@@ -2091,30 +1660,27 @@ QUESTION_BANK.forEach(question => {
  * 모든 사용자에게 항상 같은 순서로 표시됨
  */
 const FIXED_QUESTION_ORDER = [
-  "brown-06", "red-03", "blue-05",
-  "purple-05", "green-07", "orange-03",
-  "purple-01", "blue-04", "yellow-04",
-  "green-04", "yellow-06", "purple-03",
-  "yellow-05", "brown-07", "green-08",
-  "modern-01", "brown-05", "purple-07",
-  "yellow-08", "blue-07", "red-06",
-  "modern-07", "pink-03", "brown-01",
-  "green-02", "blue-02", "modern-04",
-  "pink-06", "red-07", "yellow-02",
-  "orange-05", "brown-08", "modern-05",
-  "pink-05", "modern-08", "brown-03",
-  "purple-08", "pink-02", "blue-06",
-  "brown-04", "green-05", "orange-02",
-  "red-01", "modern-02", "pink-07",
-  "orange-07", "yellow-03", "brown-02",
-  "green-06", "orange-08", "red-05",
-  "modern-03", "red-08", "orange-06",
-  "blue-03", "pink-04", "modern-06",
-  "purple-04", "green-01", "pink-08",
-  "orange-01", "blue-08", "purple-02",
-  "pink-01", "orange-04", "purple-06",
-  "yellow-07", "red-02", "green-03",
-  "yellow-01", "blue-01", "red-04"
+
+  "brown-03", "red-01", "blue-04",
+  "purple-02", "green-01", "orange-03",
+  "yellow-01", "pink-02", "modern-01",
+
+  "green-04", "yellow-03", "purple-03",
+  "red-03", "brown-01", "blue-02",
+  "orange-01", "modern-04", "pink-01",
+
+  "purple-05", "blue-03", "yellow-05",
+  "green-03", "orange-04", "brown-04",
+  "red-04", "pink-03", "modern-02",
+
+  "yellow-02", "brown-05", "green-05",
+  "blue-01", "purple-01", "orange-02",
+  "red-02", "modern-05", "pink-04",
+
+  "modern-03", "pink-05", "orange-05",
+  "green-02", "blue-05", "brown-02",
+  "purple-04", "yellow-04", "red-05"
+
 ];
 
 const QUESTION_MAP = Object.fromEntries(
