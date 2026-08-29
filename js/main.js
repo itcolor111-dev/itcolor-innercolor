@@ -2111,55 +2111,42 @@ document.getElementById("btnSave").addEventListener("click", async () => {
 // Google Sheets 응답 저장
 // ============================================================
 
-fetch(
-  GOOGLE_SHEET_WEBAPP_URL,
-  {
-    method: "POST",
-    mode: "no-cors",
-    cache: "no-store",
-    keepalive: true,
+function submitToGoogleSheet() {
 
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-
-    body: JSON.stringify(payload)
-  }
-);
-
-  // ----------------------------------------------------------
-  // 같은 결과 중복 저장 방지
-  // ----------------------------------------------------------
-
-  if (state.hasSubmitted) {
+  // 웹앱 URL 확인
+  if (
+    !GOOGLE_SHEET_WEBAPP_URL ||
+    GOOGLE_SHEET_WEBAPP_URL.includes("여기에")
+  ) {
+    console.warn(
+      "[구글시트] 웹앱 URL이 설정되지 않았습니다."
+    );
     return;
   }
 
 
+  // 같은 결과 중복 전송 방지
+  if (state.hasSubmitted) {
+    return;
+  }
+
   state.hasSubmitted = true;
 
 
-  // ----------------------------------------------------------
-  // 응답 고유 ID 만들기
-  // ----------------------------------------------------------
-
+  // 응답 고유 ID
   if (!state.submissionId) {
 
-    state.submissionId =
-      [
-        Date.now(),
-        Math.random()
-          .toString(36)
-          .slice(2, 10)
-      ].join("-");
+    state.submissionId = [
+      Date.now(),
+      Math.random()
+        .toString(36)
+        .slice(2, 10)
+    ].join("-");
 
   }
 
 
-  // ----------------------------------------------------------
   // TOP 1 / 2 / 3
-  // ----------------------------------------------------------
-
   const top1 =
     state.ranking?.[0] || {};
 
@@ -2170,42 +2157,27 @@ fetch(
     state.ranking?.[2] || {};
 
 
-  // ----------------------------------------------------------
-  // 9컬러 퍼센트 객체
-  // ----------------------------------------------------------
-
+  // 9컬러 퍼센트
   const percents = {};
 
-  (
-    state.allColorPercents || []
-  ).forEach(item => {
-
-    percents[item.key] =
-      item.percent;
-
-  });
+  (state.allColorPercents || [])
+    .forEach(item => {
+      percents[item.key] =
+        item.percent;
+    });
 
 
-  // ----------------------------------------------------------
-  // Q01 ~ Q72 답변
-  //
-  // question.id까지 같이 보관
-  // ----------------------------------------------------------
-
+  // 36문항 답변
   const answers =
     QUESTIONS.map(
       (question, index) => ({
         id: question.id,
-        answer:
-          state.answers[index]
+        answer: state.answers[index]
       })
     );
 
 
-  // ----------------------------------------------------------
   // 결과 이름
-  // ----------------------------------------------------------
-
   const resultCharacter =
     CHARACTERS[state.resultKey];
 
@@ -2221,10 +2193,7 @@ fetch(
       : state.resultKey;
 
 
-  // ----------------------------------------------------------
-  // Google Sheets 전송 데이터
-  // ----------------------------------------------------------
-
+  // 전송 데이터
   const payload = {
 
     submissionId:
@@ -2235,7 +2204,6 @@ fetch(
 
     lang:
       currentLang,
-
 
     gender:
       state.profile.gender,
@@ -2252,14 +2220,8 @@ fetch(
     resultName:
       resultName,
 
-
-    // TOP1
-
     top1Percent:
       top1.percent ?? 0,
-
-
-    // TOP2
 
     top2Key:
       top2.key || "",
@@ -2267,35 +2229,20 @@ fetch(
     top2Percent:
       top2.percent ?? 0,
 
-
-    // TOP3
-
     top3Key:
       top3.key || "",
 
     top3Percent:
       top3.percent ?? 0,
 
-
-    // 원점수
-
     scores:
       state.scores || {},
-
-
-    // 9컬러 퍼센트
 
     percents:
       percents,
 
-
-    // 72문항
-
     answers:
       answers,
-
-
-    // 사용자 환경
 
     userAgent:
       navigator.userAgent || ""
@@ -2303,50 +2250,79 @@ fetch(
   };
 
 
-  // ----------------------------------------------------------
-  // 저장
-  //
-  // ★ 결과 화면 전환을 기다리지 않는다.
-  // ----------------------------------------------------------
+  const body =
+    JSON.stringify(payload);
 
-  fetch(
-    GOOGLE_SHEET_WEBAPP_URL,
-    {
 
-      method: "POST",
+  // 실제 전송 함수
+  function sendSubmission() {
 
-      mode: "no-cors",
+    return fetch(
+      GOOGLE_SHEET_WEBAPP_URL,
+      {
+        method: "POST",
 
-      headers: {
-        "Content-Type":
-          "text/plain;charset=utf-8"
-      },
+        mode: "no-cors",
 
-      body:
-        JSON.stringify(payload)
+        cache: "no-store",
 
-    }
-  )
+        keepalive: true,
 
+        headers: {
+          "Content-Type":
+            "text/plain;charset=utf-8"
+        },
+
+        body: body
+      }
+    );
+
+  }
+
+
+  // 1차 전송
+  sendSubmission()
     .then(() => {
 
       console.log(
-        "[구글시트] 응답 전송 완료"
+        "[구글시트] 1차 전송 요청 완료"
       );
 
     })
-
     .catch(error => {
 
       console.error(
-        "[구글시트] 응답 전송 실패",
+        "[구글시트] 1차 전송 실패",
         error
       );
 
-      // 실제 네트워크 실패 시
-      // 재전송 가능하도록 풀어줌
       state.hasSubmitted = false;
 
     });
+
+
+  // 2차 안전 재전송
+  // 같은 submissionId이므로
+  // Apps Script에서 중복 저장되지 않음
+  setTimeout(() => {
+
+    sendSubmission()
+      .then(() => {
+
+        console.log(
+          "[구글시트] 안전 재전송 요청 완료"
+        );
+
+      })
+      .catch(error => {
+
+        console.error(
+          "[구글시트] 안전 재전송 실패",
+          error
+        );
+
+      });
+
+  }, 3000);
 
 }
