@@ -2111,26 +2111,21 @@ document.getElementById("btnSave").addEventListener("click", async () => {
 // Google Sheets 응답 저장
 // ============================================================
 
-function submitToGoogleSheet() {
+fetch(
+  GOOGLE_SHEET_WEBAPP_URL,
+  {
+    method: "POST",
+    mode: "no-cors",
+    cache: "no-store",
+    keepalive: true,
 
-  // ----------------------------------------------------------
-  // 구글 웹앱 URL 확인
-  // ----------------------------------------------------------
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
 
-  if (
-    !GOOGLE_SHEET_WEBAPP_URL ||
-    GOOGLE_SHEET_WEBAPP_URL.includes(
-      "여기에"
-    )
-  ) {
-
-    console.warn(
-      "[구글시트] 웹앱 URL이 설정되지 않았습니다."
-    );
-
-    return;
+    body: JSON.stringify(payload)
   }
-
+);
 
   // ----------------------------------------------------------
   // 같은 결과 중복 저장 방지
