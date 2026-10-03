@@ -41,6 +41,7 @@ let state = {
 
   profile: {
     language: currentLang,
+    country: "",
     gender: "",
     ageGroup: "",
     occupation: ""
@@ -155,6 +156,11 @@ const profileGenderButtons =
     ".profile-gender-btn"
   );
 
+const profileCountry =
+  document.getElementById(
+    "profileCountry"
+  );
+
 const profileAge =
   document.getElementById(
     "profileAge"
@@ -224,6 +230,21 @@ profileLangButtons.forEach(button => {
 
 });
 
+// ------------------------------------------------------------
+// 국가
+// ------------------------------------------------------------
+
+profileCountry.addEventListener(
+  "change",
+  () => {
+
+    state.profile.country =
+      profileCountry.value;
+
+    updateProfileNextButton();
+
+  }
+);
 
 // ------------------------------------------------------------
 // 성별
@@ -298,6 +319,7 @@ function isProfileComplete() {
 
   return Boolean(
     state.profile.language &&
+    state.profile.country &&
     state.profile.gender &&
     state.profile.ageGroup &&
     state.profile.occupation
@@ -2204,6 +2226,9 @@ function submitToGoogleSheet() {
 
     lang:
       currentLang,
+
+    country:
+      state.profile.country,
 
     gender:
       state.profile.gender,
